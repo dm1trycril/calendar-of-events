@@ -2,7 +2,6 @@
   "name": "calendar-of-events",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "dev": "webpack serve --mode development",
     "build": "webpack --mode production"
@@ -10,7 +9,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0"

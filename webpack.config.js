@@ -1,8 +1,13 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+import path from "path";
+import { fileURLToPath } from "url";
 
-module.exports = {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import { CleanWebpackPlugin } from "clean-webpack-plugin";
+
+const config = {
   entry: "./src/index.tsx",
   output: {
     filename: "[name].[contenthash].js",
@@ -33,13 +38,20 @@ module.exports = {
       },
       {
         test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.s[ac]ss$/i,
         use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/i,
+        test: /\.(png|jpe?g|gif|svg|ttf)$/i,
         type: "asset/resource",
       },
     ],
+  },
+  optimization: {
+    minimize: true,
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -56,3 +68,5 @@ module.exports = {
   },
   mode: "development",
 };
+
+export default config;

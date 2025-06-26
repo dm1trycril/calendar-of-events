@@ -1,7 +1,13 @@
 import React from "react";
 
 const App: React.FC = () => {
-  return <h1>Исторические даты</h1>;
+  return (
+    <>
+      <main>
+        <h1>Исторические даты</h1>
+      </main>
+    </>
+  );
 };
 
 export default App;

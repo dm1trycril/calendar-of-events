@@ -1,2 +1,5 @@
+@use 'blocks/reset';
 @use 'blocks/_fonts';
-@use 'blocks/global';
+@use 'blocks/globl';
+@use 'blocks/main';
+@use 'blocks/variables';

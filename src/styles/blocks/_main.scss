@@ -1,0 +1,7 @@
+@use "variables";
+
+.main-container {
+  max-width: variables.$container;
+  margin: 0 auto;
+  padding: 0 variables.$gutter;
+}
